@@ -1,4 +1,4 @@
-# Skrip Log Pengisian Cepat
+# Log Fast Charging Via Termux
 
 Ini adalah skrip shell yang dirancang untuk mencatat status pengisian daya perangkat Anda. Skrip ini mengumpulkan informasi penting tentang proses pengisian baterai, seperti suhu, status, arus, dan tegangan, lalu menyimpannya dalam file log untuk pemantauan dan analisis.
 
