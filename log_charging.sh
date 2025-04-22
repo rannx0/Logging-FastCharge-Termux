@@ -15,19 +15,25 @@ show_menu() {
     echo -n "Pilih pilihan (1/2/3): "
 }
 
+# Fungsi untuk membaca file dengan akses root
+read_battery_value() {
+    su -c "cat $1" 2>/dev/null
+}
+
 # Fungsi untuk mulai mencatat log pengisian
 start_logging() {
     echo "=== Charging Log Start ===" >> $LOGFILE
     echo "Time | Temp(°C) | Status | Current(mA) | Voltage(mV)" >> $LOGFILE
     echo "----------------------------------------------" >> $LOGFILE
     echo "Mencatat log pengisian, tekan Ctrl+C untuk berhenti..."
+
     while true; do
         TIME=$(date +"%H:%M:%S")
 
-        TEMP_RAW=$(cat /sys/class/power_supply/battery/temp 2>/dev/null)
-        CURRENT_RAW=$(cat /sys/class/power_supply/battery/current_now 2>/dev/null)
-        VOLTAGE_RAW=$(cat /sys/class/power_supply/battery/voltage_now 2>/dev/null)
-        STATUS=$(cat /sys/class/power_supply/battery/status 2>/dev/null)
+        TEMP_RAW=$(read_battery_value /sys/class/power_supply/battery/temp)
+        CURRENT_RAW=$(read_battery_value /sys/class/power_supply/battery/current_now)
+        VOLTAGE_RAW=$(read_battery_value /sys/class/power_supply/battery/voltage_now)
+        STATUS=$(read_battery_value /sys/class/power_supply/battery/status)
 
         # Handle nilai kosong agar tidak error saat dibagi
         TEMP=$(( ${TEMP_RAW:-0} / 10 ))
