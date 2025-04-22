@@ -13,22 +13,10 @@ Ini adalah skrip shell yang dirancang untuk mencatat status pengisian daya peran
   - **Tegangan**: Tegangan saat ini dari baterai dalam mV (millivolt)
 
 ## Cara Penggunaan
-
-# Langkah 1:
-
-git clone https://github.com/rannx0/Logging-FastCharge-Termux.git
-
-# Langkah 2:
-
-cd Logging-FastCharge-Termux
-
-# Langkah 3:
-
-chmod +x fast_charging_log.sh
-
-# Langkah 4:
-
-./fast_charging_log.sh
+- git clone https://github.com/rannx0/Logging-FastCharge-Termux.git
+- cd Logging-FastCharge-Termux
+- chmod +x fast_charging_log.sh
+- ./fast_charging_log.sh
 
 ---
 
