@@ -26,4 +26,4 @@ Proyek ini dilisensikan di bawah **Lisensi MIT** - lihat file [LICENSE](LICENSE)
 
 ---
 
-© 2025 Nama Anda. Semua hak dilindungi.
+© 2025 RannX0. Semua hak dilindungi.
